@@ -1,0 +1,21 @@
+body , * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar{
+	width: 0;
+}
+
+.section {
+	@apply px-4 md:px-16 lg:px-20 xl:px-32;
+}
+
+.default__transition{
+	@apply transition-all duration-300
+}
