@@ -1,6 +1,8 @@
 import { Button, Input, Typography } from "@material-tailwind/react";
 import { useFormik } from "formik";
 
+// ? ICONS
+import { AiOutlineRollback } from "react-icons/ai";
 import { FaCreativeCommonsBy } from "react-icons/fa";
 
 import { Link } from "react-router-dom";
@@ -123,9 +125,9 @@ export default function Register() {
 				<Link to="/auth/login">
 					<Typography
 						variant="small"
-						className="text-gray-700 hover:text-light-blue-500 default__transition"
+						className="text-gray-700 hover:text-light-blue-500 default__transition flex items-center gap-2"
 					>
-						back to Login
+					    <AiOutlineRollback /> back to Login
 					</Typography>
 				</Link>
 
