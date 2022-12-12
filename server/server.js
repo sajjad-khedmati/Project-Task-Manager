@@ -6,6 +6,8 @@ import cors from "cors";
 export default class Application {
 	#express = express;
 	#app = express();
+	
+
 	constructor(PORT, DB_URL) {
 		this.configApplication();
 		this.configDatabase(DB_URL);
