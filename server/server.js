@@ -1,12 +1,16 @@
 import express from "express";
 import mongoose from "mongoose";
+import path from "path";
 
 import cors from "cors";
+
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default class Application {
 	#express = express;
 	#app = express();
-	
 
 	constructor(PORT, DB_URL) {
 		this.configApplication();
@@ -17,9 +21,11 @@ export default class Application {
 	}
 
 	configApplication() {
+		console.log(path.join(__dirname, "/public"));
 		this.#app.use(cors());
 		this.#app.use(this.#express.json());
 		this.#app.use(this.#express.urlencoded({ extended: true }));
+		this.#app.use(this.#express.static(path.join(__dirname, "/public")));
 	}
 
 	configDatabase(DB_URL) {
