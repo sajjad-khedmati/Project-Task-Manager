@@ -1,6 +1,7 @@
 // ? REACT ROUTER DOM
 import { Route, Routes } from "react-router-dom";
-import Authentication from "../Pages/Authentication";
+
+import AuthRoute from "./auth.routes";
 
 //? PAGES
 import Home from "../Pages/Home";
@@ -10,7 +11,7 @@ export default function IndexRoutes() {
 	return (
 		<Routes>
 			<Route path="/" element={<Home />} />
-			<Route path="/auth" element={<Authentication />} />
+			{AuthRoute}
 			<Route path="/*" element={<NotFound />} />
 		</Routes>
 	);
