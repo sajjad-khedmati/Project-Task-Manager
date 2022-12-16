@@ -8,6 +8,8 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+import router from "./router/index.routes.js";
+
 export default class Application {
 	#express = express;
 	#app = express();
@@ -42,13 +44,7 @@ export default class Application {
 	}
 
 	routeHandler() {
-		this.#app.get("/api", (req, res, next) => {
-			return res.status(200).json({
-				status: 200,
-				success: true,
-				message: "hello express App",
-			});
-		});
+		this.#app.use("/api", router);
 	}
 
 	errorHandler() {
