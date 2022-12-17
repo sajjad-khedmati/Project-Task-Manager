@@ -23,7 +23,6 @@ export default class Application {
 	}
 
 	configApplication() {
-		console.log(path.join(__dirname, "/public"));
 		this.#app.use(cors());
 		this.#app.use(this.#express.json());
 		this.#app.use(this.#express.urlencoded({ extended: true }));
